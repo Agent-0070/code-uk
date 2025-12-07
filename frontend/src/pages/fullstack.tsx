@@ -34,7 +34,14 @@ import { useState } from 'react'
 
 
 const fullstack = () => {
-  const [openIndex, setOpenIndex] = useState<number | null>(null)
+     const [openIndex, setOpenIndex] = useState<number | null>(null)
+     const scrollToForm = () => {
+          const form = document.getElementById('brochure-form')
+          form?.scrollIntoView({ behavior: 'smooth' })
+     }
+     const openWhatsApp = () => {
+          window.open('https://wa.me/2349028495703', '_blank')
+     }
   const faqs = [
     { q: 'What is a Full Stack Web Developer?', a: 'A full stack web developer is a professional capable of working on all facets of a web application, whether it is the front-end (user interface) or the back-end (server, database).' },
     { q: "What are the prerequisites to join GOMYCODE's Full Stack Web Developer Bootcamp?", a: 'Prerequisites include a basic knowledge of computers, secondary school level math skills, and a strong willingness to learn.' },
@@ -45,7 +52,7 @@ const fullstack = () => {
 
   return (
     <section className='w-full bg-[#FFFAF3]'>
-        <section className='md:max-w-[1400px] mx-auto font-poppins '>
+        <section className='md:max-w-[1500px] mx-auto font-poppins '>
               <div className='flex flex-col md:flex-row md:gap-10 gap-10 items-center justify-between py-3 md:px-10 px-5'>
                    {/* Left Side */}
                    <div className='md:max-w-[650px]'>
@@ -65,18 +72,26 @@ const fullstack = () => {
                                  web applications, and build a portfolio that will attract recruiters.</p>
                                  {/* social to enroll */}
                                 <div className='flex md:flex-row flex-col gap-5 mt-5'>
-                                    <div className='flex flex-row gap-3 items-center cursor-pointer bg-[#27D366] rounded md:px-22 px-10 py-3'>
+                                    <button
+                                      type='button'
+                                      onClick={openWhatsApp}
+                                      className='flex flex-row gap-3 items-center cursor-pointer bg-[#27D366] rounded md:px-22 px-10 py-3'
+                                    >
                                          <h2 className='text-[17px]'>Let's Talk</h2>
                                          <span>
                                             <img src={whatsapp} alt='arrow' className='w-5 h-5 mt- ' />
                                          </span>
-                                    </div>
+                                    </button>
 
                                     {/* Brochure */}
-                                    <div className='border border-black flex flex-row gap-3 items-center md:px-22 px-10 py-3 rounded cursor-pointer'>
+                                    <button
+                                      type='button'
+                                      onClick={scrollToForm}
+                                      className='border border-black flex flex-row gap-3 items-center md:px-22 px-10 py-3 rounded cursor-pointer'
+                                    >
                                          <h2 className='text-[17px]'>Download Brochure</h2>
                                          
-                                    </div>
+                                    </button>
                                 </div>
                                 {/* Durations */}
                                 <div className='flex flex-col gap-3 mt-5'>
@@ -155,10 +170,16 @@ const fullstack = () => {
 
         <section className='md:max-w-7xl mx-auto font-poppins my-10 px-5'>
             {/* Download Brochure */}
-                         <div className='flex items-center justify-center'>
-                            <h2 className='text-white bg-black py-1.5 md:px-15 px-10 font-[395] rounded'>Download the brochure</h2>
+                                                             <div className='flex items-center justify-center'>
+                                                                      <button
+                                                                           type='button'
+                                                                           onClick={scrollToForm}
+                                                                           className='text-white bg-black py-1.5 md:px-15 px-10 font-[395] rounded'
+                                                                      >
+                                                                           Download the brochure
+                                                                      </button>
 
-                         </div>
+                                                             </div>
 
                          {/* Full-Stack Developer Library */}
                          <div className='bg-black text-white rounded-3xl mt-10'>
@@ -246,12 +267,16 @@ const fullstack = () => {
                                  <div className='md:max-w-[400px]'>
                                    <p className='font-[350]'>Join GoMyCode, the leader in digital training in Africa, and join a dynamic community of web developers.</p>
                                  </div>
-                                 <div className='flex flex-row gap-2 bg-white text-black w-80 px-5 py-2.5 rounded cursor-pointer mt-5 justify-center'>
-                                    <p>Download the brochure</p>
-                                    <span>
-                                        <img src={download} alt='icon' className='w-5 h-5 object-cover mt-0.5' />
-                                    </span>
-                                 </div>
+                                                                                 <button
+                                                                                      type='button'
+                                                                                      onClick={scrollToForm}
+                                                                                      className='flex flex-row gap-2 bg-white text-black w-80 px-5 py-2.5 rounded cursor-pointer mt-5 justify-center'
+                                                                                 >
+                                                                                          <p>Download the brochure</p>
+                                                                                          <span>
+                                                                                                    <img src={download} alt='icon' className='w-5 h-5 object-cover mt-0.5' />
+                                                                                          </span>
+                                                                                 </button>
                               </div>
                           </div>
                           {/* Right Side */}
@@ -461,7 +486,7 @@ const fullstack = () => {
                      </div>
              </div>
              {/* form */}
-             <div className='md:max-w-2xl mx-auto mt-20 font-poppins'>
+             <div className='md:max-w-2xl mx-auto mt-20 font-poppins' id='brochure-form'>
                      <div className='md:max-w-[450px] mx-auto text-center'>
                             <h2 className='text-2xl font-[500]'>Fill out the form to receive the full program</h2>
                      </div>
@@ -572,9 +597,15 @@ const fullstack = () => {
                                    <h2 className='text-[18px] font-[500]'>Course recordings</h2>
                               </div>
                           </div>
-                          <div className='mt-15 flex justify-center'>
-                                <div className='bg-[#0D663C] text-white py-2.5 px-10 rounded-md font-[380] cursor-pointer'>Download the brochure</div>
-                          </div>
+                                                                 <div className='mt-15 flex justify-center'>
+                                                                                <button
+                                                                                     type='button'
+                                                                                     onClick={scrollToForm}
+                                                                                     className='bg-[#0D663C] text-white py-2.5 px-10 rounded-md font-[380] cursor-pointer'
+                                                                                >
+                                                                                     Download the brochure
+                                                                                </button>
+                                                                 </div>
                         </div>
                         
                </div>

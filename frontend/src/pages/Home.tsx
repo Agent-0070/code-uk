@@ -255,7 +255,7 @@ const Home = () => {
                              <div className='md:max-w-3xl mx-auto md:px-0 px-8 py-10 '>
                       <div className='grid grid-cols-1 md:grid-cols-3 gap-6  '>
                         {/* Card 1 */}
-                        <Link to="/socialmedia">
+                        <Link to="/social">
                         <div className='bg-white  py-10 px-6 rounded-2xl'>
                           <div className='flex flex-col gap-4 max-w-[200px]'>
                                 <img src={icondetail} alt='icon' className='w-8 h-6 object-cover ' />
@@ -362,7 +362,7 @@ const Home = () => {
                         </div>
                         </Link>
                         {/* Card 2 */}
-                        <Link to='/graphicdesign'>
+                        <Link to='/design'>
                         <div className='bg-white  py-10 px-6 rounded-2xl'>
                           <div className='flex flex-col gap-4 max-w-[200px]'>
                                 <img src={icondetail} alt='icon' className='w-8 h-6 object-cover ' />
@@ -378,7 +378,7 @@ const Home = () => {
 
                         </div> </Link>
                         {/* Card 3 */}
-                   <Link to='/digitalmarketing'> 
+                   <Link to='/digital'> 
                    <div className='bg-white py-10 px-6 rounded-2xl'>
                           <div className='flex flex-col gap-4 max-w-[200px]'>
                                 <img src={icondetail} alt='icon' className='w-8 h-6 object-cover ' />

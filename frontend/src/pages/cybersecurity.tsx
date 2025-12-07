@@ -24,7 +24,14 @@ import unleash4 from '../assets/courses/unleash4.svg'
 
 
 const fullstack = () => {
-  const [openIndex, setOpenIndex] = useState<number | null>(null)
+     const [openIndex, setOpenIndex] = useState<number | null>(null)
+     const scrollToForm = () => {
+          const form = document.getElementById('brochure-form')
+          form?.scrollIntoView({ behavior: 'smooth' })
+     }
+     const openWhatsApp = () => {
+          window.open('https://wa.me/2349028495703', '_blank')
+     }
   const faqs = [
     { q: 'What is the cybersecurity training offered by GOMYCODE?', a: 'The GOMYCODE cybersecurity training program prepares students for CompTIA Security+ certification by covering essential computer security concepts, risk management, and incident response.' },
     { q: "What are the main topics covered in this training?", a: 'Introduction to cybersecurity and ethics ,Networks and active defense ,Attacks, threats, vulnerabilities, and architecture ,Cryptography and implementation of secure solutions ,Operations, governance, and risk management ,Compliance and audits' },
@@ -36,7 +43,7 @@ const fullstack = () => {
 
   return (
     <section className='w-full bg-[#FFFAF3]'>
-         <section className='md:max-w-[1400px] mx-auto font-poppins '>
+         <section className='md:max-w-[1500px] mx-auto font-poppins '>
               <div className='flex flex-col md:flex-row md:gap-20 gap-10 items-center justify-between py-3 md:px-5 px-5'>
                    {/* Left Side */}
                    <div className='md:max-w-[650px]'>
@@ -57,18 +64,26 @@ const fullstack = () => {
                                 computer systems and obtain CompTIA Security+ certification.</p>
                                  {/* social to enroll */}
                                <div className='flex md:flex-row flex-col gap-5 mt-5'>
-                                    <div className='flex flex-row gap-3 items-center cursor-pointer bg-[#27D366] rounded md:px-22 px-10 py-3'>
+                                    <button
+                                      type='button'
+                                      onClick={openWhatsApp}
+                                      className='flex flex-row gap-3 items-center cursor-pointer bg-[#27D366] rounded md:px-22 px-10 py-3'
+                                    >
                                          <h2 className='text-[17px]'>Let's Talk</h2>
                                          <span>
                                             <img src={whatsapp} alt='arrow' className='w-5 h-5 mt- ' />
                                          </span>
-                                    </div>
+                                    </button>
 
                                     {/* Brochure */}
-                                    <div className='border border-black flex flex-row gap-3 items-center md:px-22 px-10 py-3 rounded cursor-pointer'>
+                                    <button
+                                      type='button'
+                                      onClick={scrollToForm}
+                                      className='border border-black flex flex-row gap-3 items-center md:px-22 px-10 py-3 rounded cursor-pointer'
+                                    >
                                          <h2 className='text-[17px]'>Download Brochure</h2>
                                          
-                                    </div>
+                                    </button>
                                 </div>
                                 {/* Durations */}
                                 <div className='flex flex-col gap-3 mt-5'>
@@ -148,10 +163,16 @@ const fullstack = () => {
 
         <section className='md:max-w-7xl mx-auto font-poppins my-10 px-5'>
             {/* Download Brochure */}
-                         <div className='flex items-center justify-center'>
-                            <h2 className='text-white bg-black py-1.5 md:px-15 px-10 font-[395] rounded'>Download the brochure</h2>
+                                                             <div className='flex items-center justify-center'>
+                                                                      <button
+                                                                           type='button'
+                                                                           onClick={scrollToForm}
+                                                                           className='text-white bg-black py-1.5 md:px-15 px-10 font-[395] rounded'
+                                                                      >
+                                                                           Download the brochure
+                                                                      </button>
 
-                         </div>
+                                                             </div>
 
                         {/* UNLEASH SECTION */}
                         <div className='flex flex-col justify-center items-center pt-20 md:px-0 px-6 '>
@@ -225,12 +246,16 @@ const fullstack = () => {
                                  <div className='md:max-w-[400px]'>
                                    <p className='font-[350]'>Join GoMyCode, the leader in digital training in Africa, and join a dynamic community of web developers.</p>
                                  </div>
-                                 <div className='flex flex-row gap-2 bg-white text-black w-80 px-5 py-2.5 rounded cursor-pointer mt-5 justify-center'>
-                                    <p>Download the brochure</p>
-                                    <span>
-                                        <img src={download} alt='icon' className='w-5 h-5 object-cover mt-0.5' />
-                                    </span>
-                                 </div>
+                                                                                 <button
+                                                                                      type='button'
+                                                                                      onClick={scrollToForm}
+                                                                                      className='flex flex-row gap-2 bg-white text-black w-80 px-5 py-2.5 rounded cursor-pointer mt-5 justify-center'
+                                                                                 >
+                                                                                          <p>Download the brochure</p>
+                                                                                          <span>
+                                                                                                    <img src={download} alt='icon' className='w-5 h-5 object-cover mt-0.5' />
+                                                                                          </span>
+                                                                                 </button>
                               </div>
                           </div>
                           {/* Right Side */}
@@ -288,7 +313,7 @@ const fullstack = () => {
                                         <img src={cyb1} alt='alumni1' className='w-15 h-15 object-cover rounded-full' />
                                        </div>
                                        <div className='max-w-[100px]'>
-                                        <h2 className='font-[420] text-[19px]'>Hichem</h2>
+                                        <h2 className='font-[420]  md:text-[19px] text-[14px]'>Hichem</h2>
                                        </div>
                                   </div>
                               </div>
@@ -308,7 +333,7 @@ const fullstack = () => {
                                         <img src={cyb2} alt='alumni1' className='w-15 h-15 object-cover rounded-full' />
                                        </div>
                                        <div className='max-w-[100px]'>
-                                        <h2 className='font-[420] text-[19px]'>Ali Bouadel</h2>
+                                        <h2 className='font-[420] md:text-[19px] text-[14px]'>Ali Bouadel</h2>
                                        </div>
                                   </div>
                               </div>
@@ -330,7 +355,7 @@ const fullstack = () => {
                                         <img src={cyb3} alt='alumni1' className='w-15 h-15 object-cover rounded-full' />
                                        </div>
                                        <div className='max-w-[100px]'>
-                                        <h2 className='font-[420] text-[19px]'>Mohamed Amine Amri</h2>
+                                        <h2 className='font-[420]  md:text-[19px] text-[14px]'>Mohamed Amine Amri</h2>
                                        </div>
                                   </div>
                               </div>
@@ -440,7 +465,7 @@ const fullstack = () => {
                      </div>
              </div>
              {/* form */}
-             <div className='md:max-w-[550px] mx-auto mt-20 font-poppins'>
+             <div className='md:max-w-[550px] mx-auto mt-20 font-poppins' id='brochure-form'>
                      <div className='md:max-w-[450px] mx-auto text-center'>
                             <h2 className='text-2xl font-[500]'>Fill out the form to receive the full program</h2>
                      </div>
@@ -518,9 +543,15 @@ const fullstack = () => {
                                    <h2 className='text-[18px] font-[500]'>Course recordings</h2>
                               </div>
                           </div>
-                          <div className='mt-15 flex justify-center'>
-                                <div className='bg-[#5349ff] text-white py-2.5 px-10 rounded-md font-[380] cursor-pointer'>Download the brochure</div>
-                          </div>
+                                                                 <div className='mt-15 flex justify-center'>
+                                                                                <button
+                                                                                     type='button'
+                                                                                     onClick={scrollToForm}
+                                                                                     className='bg-[#5349ff] text-white py-2.5 px-10 rounded-md font-[380] cursor-pointer'
+                                                                                >
+                                                                                     Download the brochure
+                                                                                </button>
+                                                                 </div>
                         </div>
                         
                </div>

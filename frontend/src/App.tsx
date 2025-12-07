@@ -27,9 +27,9 @@ const App = () => {
         <Route path="/cybersecurity" element={<Cybersecurity />} />
         <Route path="/python" element={<Python />} />
         <Route path="/data" element={<Data />} />
-        <Route path="/socialmedia" element={<Social />} />
-        <Route path="/digitalmarketing" element={<Digital />} />
-        <Route path="/graphicdesign" element={<Design />} />
+        <Route path="/social" element={<Social />} />
+        <Route path="/digital" element={<Digital />} />
+        <Route path="/design" element={<Design />} />
       </Routes>
       <ScrollToTop />
       <Footer />

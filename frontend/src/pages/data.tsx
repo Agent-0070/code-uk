@@ -25,6 +25,13 @@ import unleash4 from '../assets/courses/unleash4.svg'
 
 const fullstack = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null)
+  const scrollToForm = () => {
+    const form = document.getElementById('brochure-form')
+    form?.scrollIntoView({ behavior: 'smooth' })
+  }
+  const openWhatsApp = () => {
+    window.open('https://wa.me/2349028495703', '_blank')
+  }
   const faqs = [
     { q: 'What is the duration of the training?', a: 'The training lasts 16 weeks with 4 hours of weekly learning.' },
     { q: "What is the content of the training?", a: 'The training covers data analysis, SQL, Power Query, DAX operations, and creating interactive dashboards. Participants will learn to extract, transform, and visualize data to provide meaningful insights.' },
@@ -57,18 +64,26 @@ const fullstack = () => {
                                  giving you complete mastery of Microsoft Power BI, an essential tool for excelling in this field.</p>
                                  {/* social to enroll */}
                                <div className='flex md:flex-row flex-col gap-5 mt-5'>
-                                    <div className='flex flex-row gap-3 items-center cursor-pointer bg-[#27D366] rounded md:px-22 px-10 py-3'>
+                                    <button
+                                      type='button'
+                                      onClick={openWhatsApp}
+                                      className='flex flex-row gap-3 items-center cursor-pointer bg-[#27D366] rounded md:px-22 px-10 py-3'
+                                    >
                                          <h2 className='text-[17px]'>Let's Talk</h2>
                                          <span>
                                             <img src={whatsapp} alt='arrow' className='w-5 h-5 mt- ' />
                                          </span>
-                                    </div>
+                                    </button>
 
                                     {/* Brochure */}
-                                    <div className='border border-black flex flex-row gap-3 items-center md:px-22 px-10 py-3 rounded cursor-pointer'>
-                                         <h2 className='text-[17px]'>Download Brochure</h2>
+                                     <button
+                                       type='button'
+                                       onClick={scrollToForm}
+                                       className='border border-black flex flex-row gap-3 items-center md:px-22 px-10 py-3 rounded cursor-pointer'
+                                     >
+                                       <h2 className='text-[17px]'>Download Brochure</h2>
                                          
-                                    </div>
+                                     </button>
                                 </div>
                                 {/* Durations */}
                                 <div className='flex flex-col gap-3 mt-5'>
@@ -149,7 +164,13 @@ const fullstack = () => {
         <section className='md:max-w-7xl mx-auto font-poppins my-10 px-5'>
             {/* Download Brochure */}
                          <div className='flex items-center justify-center'>
-                            <h2 className='text-white bg-black py-1.5 md:px-15 px-10 font-[395] rounded'>Download the brochure</h2>
+                            <button
+                              type='button'
+                              onClick={scrollToForm}
+                              className='text-white bg-black py-1.5 md:px-15 px-10 font-[395] rounded'
+                            >
+                              Download the brochure
+                            </button>
 
                          </div>
 
@@ -224,12 +245,16 @@ const fullstack = () => {
                                    <p className='font-[350]'>Join a leading institution in the field of digital training and become part of a dynamic
                                      community of data analysts prepared to conquer the professional world.</p>
                                  </div>
-                                 <div className='flex flex-row gap-2 bg-white text-black w-80 px-5 py-2.5 rounded cursor-pointer mt-5 justify-center'>
+                                 <button
+                                   type='button'
+                                   onClick={scrollToForm}
+                                   className='flex flex-row gap-2 bg-white text-black w-80 px-5 py-2.5 rounded cursor-pointer mt-5 justify-center'
+                                 >
                                     <p>Download the brochure</p>
                                     <span>
                                         <img src={download} alt='icon' className='w-5 h-5 object-cover mt-0.5' />
                                     </span>
-                                 </div>
+                                 </button>
                               </div>
                           </div>
                           {/* Right Side */}
@@ -439,7 +464,7 @@ const fullstack = () => {
                      </div>
              </div>
              {/* form */}
-             <div className='md:max-w-[550px] mx-auto mt-20 font-poppins'>
+             <div className='md:max-w-[550px] mx-auto mt-20 font-poppins' id='brochure-form'>
                      <div className='md:max-w-[450px] mx-auto text-center'>
                             <h2 className='text-2xl font-[500]'>Fill out the form to receive the full program</h2>
                      </div>
@@ -518,7 +543,13 @@ const fullstack = () => {
                               </div>
                           </div>
                           <div className='mt-15 flex justify-center'>
-                                <div className='bg-[#5349FF] text-white py-2.5 px-10 rounded-md font-[380] cursor-pointer'>Download the brochure</div>
+                                <button
+                                  type='button'
+                                  onClick={scrollToForm}
+                                  className='bg-[#5349FF] text-white py-2.5 px-10 rounded-md font-[380] cursor-pointer'
+                                >
+                                  Download the brochure
+                                </button>
                           </div>
                         </div>
                         
