@@ -1,6 +1,6 @@
 import  { useState, useRef, useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
-import Logo from '../assets/img/mylogoo.png'
+import Logo from '../assets/img/mylogooo.png'
 import AppIcon from '../assets/img/menu.png'
 import ngarrow from '../assets/img/ngarrow.png'
 
@@ -27,6 +27,10 @@ const Navbar = () => {
     return () => document.removeEventListener('mousedown', handleClickOutside)
   }, [])
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
+
   const navClass = (isActive: boolean | undefined) =>
     `${linkBase} ${isActive ? 'text-[#E60B14]' : 'text-black'}`
 
@@ -39,12 +43,12 @@ const Navbar = () => {
         <div className='flex justify-between items-center'>
           {/* Left Side - Logo + desktop links */}
           <div className='flex items-center md:space-x-8 text-sm'>
-           <NavLink to="/"><img src={Logo} alt="Logo" className='md:h-auto md:w-auto h-4.5' /></NavLink>
+           <NavLink to="/" onClick={scrollToTop}><img src={Logo} alt="Logo" className='md:h-auto md:w-auto h-4.5' /></NavLink>
             {/* desktop links - hidden on small screens */}
             <div className='hidden md:flex md:items-center md:space-x-8 ml-4'>
-              <NavLink to="/about" className={({ isActive }) => navClass(isActive)}>About MYCODE</NavLink>
-              <NavLink to="/hackerspace" className={({ isActive }) => navClass(isActive)}>Hackerspaces</NavLink>
-              <NavLink to="/blog" className={({ isActive }) => navClass(isActive)}>MYCODETECH</NavLink>
+              <NavLink to="/about" onClick={scrollToTop} className={({ isActive }) => navClass(isActive)}>About MYCODE</NavLink>
+              <NavLink to="/hackerspace" onClick={scrollToTop} className={({ isActive }) => navClass(isActive)}>Hackerspaces</NavLink>
+              <NavLink to="/blog" onClick={scrollToTop} className={({ isActive }) => navClass(isActive)}>MYCODEBLOG</NavLink>
             </div>
           </div>
 
@@ -100,25 +104,34 @@ const Navbar = () => {
                   className='md:hidden absolute right-0 mt-2 w-48 bg-[#FFFAF3] rounded-md shadow-md py-2 z-50'
                 >
                   <NavLink
-                    to="/"
+                    to="/about"
                     className={({ isActive }) => mobileNavClass(isActive)}
-                    onClick={() => setMobileOpen(false)}
+                    onClick={() => {
+                      setMobileOpen(false)
+                      scrollToTop()
+                    }}
                   >
                     MYCODE About
                   </NavLink>
                   <NavLink
                     to="/hackerspace"
                     className={({ isActive }) => mobileNavClass(isActive)}
-                    onClick={() => setMobileOpen(false)}
+                    onClick={() => {
+                      setMobileOpen(false)
+                      scrollToTop()
+                    }}
                   >
                     Hackerspaces
                   </NavLink>
                   <NavLink
-                    to="/"
+                    to="/blog"
                     className={({ isActive }) => mobileNavClass(isActive)}
-                    onClick={() => setMobileOpen(false)}
+                    onClick={() => {
+                      setMobileOpen(false)
+                      scrollToTop()
+                    }}
                   >
-                    MYCODETECH
+                    MYCODEBLOG
                   </NavLink>
                 </div>
               )}

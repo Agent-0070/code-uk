@@ -20,12 +20,12 @@ const hackerspace = () => {
                        <div className='flex flex-col md:flex-row justify-between items-center md:px-15 px-5 pt-10 md:pt-12 md:pb-10 gap-6'>
                                 {/* Left Side - Text */}
                                 <div className='flex flex-col gap-6 md:max-w-[700px]'>
-                                       <h2 className='md:text-5xl font-poppins  font-[500] mb-2'>Connect with Africa's vibrant tech community at our hackerspaces!</h2>
-                                       <p className='font-poppins'>Our hackerspaces are located in 40+ cities across Africa, ready to welcome you to a friendly and 
+                                       <h2 className='md:text-5xl text-[25px] font-poppins  font-[500] mb-2'>Connect with Africa's vibrant tech community at our hackerspaces!</h2>
+                                       <p className='font-poppins md:text-[16px] text-[14px]'>Our hackerspaces are located in 40+ cities across Africa, ready to welcome you to a friendly and 
                                         collaborative environment equipped with the latest technologies.
                                          Come work on your projects, and attend exclusive events, workshops, and conferences led by industry experts.</p>
 
-                                         <p className='font-poppins'>Sign up now to broaden your skills, expand your network, and advance your career.</p>
+                                         <p className='font-poppins md:text-[16px] text-[14px]'>Sign up now to broaden your skills, expand your network, and advance your career.</p>
                                          
                                           {/* BUtton sign up */}
                                   <div className=''>

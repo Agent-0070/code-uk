@@ -5,6 +5,14 @@ import About from './pages/about'
 import ScrollToTop from './components/ScrollToTop'
 import Hackerspace from './pages/hackerspace'
 import Blog from './pages/blog'
+import Fullstack from './pages/fullstack'
+import Python from './pages/python'
+import Cybersecurity from './pages/cybersecurity'
+import Data from './pages/data'
+import Social from './pages/social'
+import Digital from './pages/digital'
+import Design from './pages/design'
+import Footer from './components/Footer'
 
 const App = () => {
   return (
@@ -14,9 +22,17 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/hackerspace" element={<Hackerspace />} />
-        <Route path="/tech" element={<Blog />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/fullstack" element={<Fullstack />} />
+        <Route path="/cybersecurity" element={<Cybersecurity />} />
+        <Route path="/python" element={<Python />} />
+        <Route path="/data" element={<Data />} />
+        <Route path="/socialmedia" element={<Social />} />
+        <Route path="/digitalmarketing" element={<Digital />} />
+        <Route path="/graphicdesign" element={<Design />} />
       </Routes>
       <ScrollToTop />
+      <Footer />
     </>
   )
 }
